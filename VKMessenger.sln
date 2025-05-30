@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VKMessenger", "VKMessenger\VKMessenger.csproj", "{7B4C4E84-B7A1-4175-8A63-CE13AD85D531}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B4C4E84-B7A1-4175-8A63-CE13AD85D531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B4C4E84-B7A1-4175-8A63-CE13AD85D531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B4C4E84-B7A1-4175-8A63-CE13AD85D531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B4C4E84-B7A1-4175-8A63-CE13AD85D531}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75C6F03A-9B27-47CF-936A-92DC9C5FC968}
+	EndGlobalSection
+EndGlobal
