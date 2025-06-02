@@ -1,9 +1,71 @@
 ﻿<Application x:Class="VKMessenger.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:VKMessenger"
-             StartupUri="MainWindow.xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Application.Resources>
-         
+        <!-- Цветовая палитра VK -->
+        <SolidColorBrush x:Key="VKPrimaryBrush" Color="#4A76A8"/>
+        <SolidColorBrush x:Key="VKBackgroundBrush" Color="#EDEEF0"/>
+        <SolidColorBrush x:Key="VKTextPrimaryBrush" Color="#000000"/>
+        <SolidColorBrush x:Key="VKTextSecondaryBrush" Color="#818C99"/>
+        <SolidColorBrush x:Key="VKBorderBrush" Color="#DCE1E6"/>
+        <SolidColorBrush x:Key="VKCardBrush" Color="#FFFFFF"/>
+
+        <!-- Стиль для GroupBox -->
+        <Style TargetType="GroupBox">
+            <Setter Property="Background" Value="{StaticResource VKCardBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource VKBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="0 0 0 10"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" 
+                                   FontWeight="Bold"
+                                   Foreground="#2A5885"
+                                   FontSize="14"
+                                   Padding="0 0 0 5"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource VKPrimaryBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10 5"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#3a66a8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Стиль для списков -->
+        <Style TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        </Style>
+
+        <!-- Стиль для элементов списка -->
+        <Style TargetType="ListBoxItem">
+            <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            <Setter Property="BorderBrush" Value="{StaticResource VKBorderBrush}"/>
+            <Setter Property="Padding" Value="10 8"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#E5EBF1"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F5F6F8"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

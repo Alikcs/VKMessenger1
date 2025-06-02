@@ -1,17 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace VKMessenger
 {
-    /// <summary>
-    /// Логика взаимодействия для App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var mainWindow = new Window
+            {
+                Title = "VK Messenger",
+                Width = 1000,
+                Height = 700,
+                MinWidth = 800,
+                MinHeight = 600,
+                WindowStartupLocation = WindowStartupLocation.CenterScreen,
+                Icon = new BitmapImage(new Uri("C:\\Users\\azkar\\source\\repos\\VKMessenger\\VK.com-logo.ico"))
+            };
+
+            mainWindow.Content = new LoginPage();
+            mainWindow.Show();
+        }
     }
 }

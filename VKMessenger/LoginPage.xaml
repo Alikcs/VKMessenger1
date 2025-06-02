@@ -1,0 +1,61 @@
+﻿<Page x:Class="VKMessenger.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Авторизация"
+      Background="{StaticResource VKBackgroundBrush}">
+    <Grid>
+        <Border Width="400" Padding="20" Background="White" 
+                CornerRadius="8" BorderThickness="1" BorderBrush="#DCE1E6"
+                VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <!-- Заголовок -->
+                <TextBlock Text="VK Messenger" 
+                           FontSize="24" FontWeight="Bold" 
+                           Foreground="#4A76A8"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <!-- Инструкция -->
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
+                    <Run Text="Для работы приложения необходим токен доступа VK API. Получить токен можно на сайте: "/>
+                    <Hyperlink NavigateUri="https://vkhost.github.io" 
+                               RequestNavigate="Hyperlink_RequestNavigate"
+                               Foreground="#4A76A8">
+                        https://vkhost.github.io
+                    </Hyperlink>
+                    <LineBreak/><LineBreak/>
+                    <Run Text="1. Выберите сервис: VK Admin"/>
+                    <LineBreak/>
+                    <Run Text="2. Нажмите 'Разрешить'"/>
+                    <LineBreak/>
+                    <Run Text="3. Скопируйте токен из адресной строки"/>
+                </TextBlock>
+
+                <!-- Токен -->
+                <TextBlock Text="Введите токен:" Margin="0,10,0,5"/>
+                <PasswordBox x:Name="TokenBox" Height="35" 
+                             BorderThickness="1" BorderBrush="#DCE1E6"/>
+
+                <!-- Кнопка входа -->
+                <Button Content="Войти" Height="35" Margin="0,20,0,10"
+                        Click="LoginButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="8"
+                                    Padding="10,5">
+                                <ContentPresenter 
+                                    Content="{TemplateBinding Content}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- Статус -->
+                <TextBlock x:Name="StatusText" Foreground="#E64646" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
