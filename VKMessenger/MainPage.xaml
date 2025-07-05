@@ -105,10 +105,13 @@
 
         <!-- История сообщений (правая верхняя часть) -->
         <GroupBox Grid.Column="1" Grid.Row="0" Header="История сообщений">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            
                 <ListBox x:Name="MessagesList" BorderThickness="0">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled"
+                              MaxHeight="300">
                             <StackPanel Margin="5">
                                 <StackPanel Orientation="Horizontal">
                                     <!-- Аватар отправителя -->
@@ -164,10 +167,11 @@
                                     </ItemsControl.ItemTemplate>
                                 </ItemsControl>
                             </StackPanel>
-                        </DataTemplate>
+                        </ScrollViewer>
+                      </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </ScrollViewer>
+            
         </GroupBox>
 
         <!-- Нижняя панель (новое сообщение + вложения) -->
